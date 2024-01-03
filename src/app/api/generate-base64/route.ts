@@ -39,7 +39,7 @@ export const POST = async (request: Request) => {
     const res = await request.json();
     const entryId = res.sys.id;
     const photoId = res.fields.photo[locale].sys.id;
-    const currentBase64 = res.fields.base64[locale];
+    const currentBase64 = res.fields.base64?.[locale];
 
     // error handling for entry/environment is not implemented
     try {
